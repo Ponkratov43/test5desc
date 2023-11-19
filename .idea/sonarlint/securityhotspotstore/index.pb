@@ -18,3 +18,5 @@ _
 /src/main/java/org/pandemorra/ExcelExporter.java,d\a\dad4a3312f42298726c15d04801ef91860f46d99
 `
 0src/main/java/org/pandemorra/ProductCatalog.java,b\0\b0e40304271951293f02097493f5ab8fce0011d5
+\
+,src/main/java/org/pandemorra/test10desc.java,a\4\a494f9065288b07cb4c400014c290146600f17ce

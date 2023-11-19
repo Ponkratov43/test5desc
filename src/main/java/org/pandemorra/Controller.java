@@ -5,7 +5,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
-
 import java.util.Optional;
 
 public class Controller {
@@ -49,7 +48,10 @@ public class Controller {
         dialog.setContentText("Enter product name:");
 
         Optional<String> result = dialog.showAndWait();
-        result.ifPresent(name -> catalog.addProduct(new Product(name, "", "")));
+        result.ifPresent(name -> {
+            Product product = new Product("ID", "PhotoURL", "SourceURL", name, true, 123.45, "Description", "Category", "Action");
+            catalog.addProduct(product);
+        });
     }
 
     @FXML

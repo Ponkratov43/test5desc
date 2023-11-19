@@ -14,4 +14,3 @@ public class DoubleStringConverter extends StringConverter<Double> {
         return Double.valueOf(string);
     }
 }
-

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ExcelExporter {
 
-    public void exportToExcel(List<Product> products, File file) {
+    public void exportToExcel(List<Product> products, String filePath) {
         try (Workbook workbook = new XSSFWorkbook()) {
             Sheet sheet = workbook.createSheet("Product Catalog");
 
@@ -30,15 +30,15 @@ public class ExcelExporter {
                 row.createCell(1).setCellValue(product.getName());
                 row.createCell(2).setCellValue(product.getCategory());
                 row.createCell(3).setCellValue(product.getAction());
-                row.createCell(4).setCellValue(product.getPhoto());
-                row.createCell(5).setCellValue(product.getSourceLink());
+                row.createCell(4).setCellValue(product.getPhotoUrl());
+                row.createCell(5).setCellValue(product.getSourceUrl());
                 row.createCell(6).setCellValue(product.isAvailability());
                 row.createCell(7).setCellValue(product.getPrice());
                 row.createCell(8).setCellValue(product.getDescription());
             }
 
             // Запись в файл
-            try (FileOutputStream outputStream = new FileOutputStream(file)) {
+            try (FileOutputStream outputStream = new FileOutputStream(new File(filePath))) {
                 workbook.write(outputStream);
             }
 
